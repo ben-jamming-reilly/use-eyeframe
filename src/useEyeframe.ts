@@ -55,6 +55,8 @@ export default function useEyeframe(src: string, cbs: Callbacks = {}) {
       return setStatus(message.payload);
     }
 
+    console.log(message);
+
     if (!status.ready) return;
 
     if (message.type === "response") {
