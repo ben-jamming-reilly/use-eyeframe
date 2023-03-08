@@ -41,9 +41,10 @@ export default function eyeframe(allowedOrigins: string[]) {
 
   window.addEventListener("message", (event: MessageEvent) => {
     if (!allowedOrigins.includes(event.origin)) return;
+
     if (event.data === "init") return client.init(event.ports[0]);
 
-    // ensure message is a response
+    // sanitize the message
     const message = event.data as EyeMessage;
     client.processMessage(message);
   });
@@ -88,7 +89,6 @@ export class Client {
       this.port.postMessage(request);
 
       this.requestPromises.set(request.id, {
-        id: request.id,
         resolve: resolve,
         reject: reject,
       });

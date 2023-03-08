@@ -17,7 +17,6 @@ export interface EyeError extends EyeMessage {
 }
 
 export interface RequestPromise {
-  id: string;
   resolve: (value: any) => void;
   reject: (reason: any) => void;
 }

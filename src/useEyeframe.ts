@@ -104,7 +104,6 @@ export default function useEyeframe(src: string, cbs: Callbacks = {}) {
       channelRef.current?.port1.postMessage(request);
 
       requestPromises.current.set(request.id, {
-        id: request.id,
         resolve: resolve,
         reject: reject,
       });
