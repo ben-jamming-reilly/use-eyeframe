@@ -1,3 +1,3 @@
-# mostMessage
+# use-eyeframe
 
-Making the most out your postMessaging
+Making the most out of iframe communcation with just one hook
